@@ -1,7 +1,5 @@
 import json
-import json
 import boto3
-from botocore.vendored import requests
 
 AWS_REGION = 'us-east-1'
 SERVICE = 'dynamodb'

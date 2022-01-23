@@ -6,6 +6,7 @@ AWS_REGION = 'us-east-1'
 SERVICE = 'dynamodb'
 DYNAMO_DB_TABLE_NAME = 'messages-table'
 SQS_QUEUE_NAME = "vidsync-send-messages.fifo"
+FIFO_QUEUE_URL = "https://sqs.us-east-1.amazonaws.com/201565561775/vidsync-send-messages.fifo"
 cognito_client = boto3.client("cognito-idp", region_name="us-east-1")
 sqs_client = boto3.client('sqs')
 
@@ -36,7 +37,7 @@ def lambda_handler(event, context):
     print("queue_url_response:{}".format(queue_url_response))
     print("queue_url_response:{}".format(queue_url_response))
     send_response = sqs_client.send_message(
-        QueueUrl="https://sqs.us-east-1.amazonaws.com/201565561775/vidsync-send-messages.fifo",
+        QueueUrl=FIFO_QUEUE_URL,
         MessageBody=json.dumps(message_body),
         MessageGroupId=event_id
     )
