@@ -2,10 +2,12 @@
 A total of 11 Serverless Lambda functions were developed for backend logic, authorization, event handling, messages and event history handling
 
 ### Backend was segregated into three sections:
-1. Events handling 
-2. Messages handling
-3. User information, Signup/Login, Authentication 
-4. 
+1. Authentication 
+2. Events handling  
+3. Messages handling
+4. User Signup/Login
+5. User information handling
+
 ## Following AWS Components used:
 1. Cognito
 2. API Gateway
